@@ -1,0 +1,397 @@
+{
+  "name": "mute",
+  "permissions": "NONE",
+  "restriction": "1",
+  "_id": "NPdQu",
+  "actions": [
+    {
+      "info": "1",
+      "find": "Muted",
+      "storage": "1",
+      "varName": "find.muted.role",
+      "name": "Find Role"
+    },
+    {
+      "storage": "1",
+      "varName": "find.muted.role",
+      "comparison": "0",
+      "value": "",
+      "iftrue": "2",
+      "iftrueVal": "9",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "channel": "0",
+      "varName": "",
+      "message": "Creating Muted role...",
+      "storage": "1",
+      "varName2": "creating.muted.role.message",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Send Message"
+    },
+    {
+      "time": "3",
+      "measurement": "1",
+      "name": "Wait"
+    },
+    {
+      "roleName": "Muted",
+      "hoist": "false",
+      "mentionable": "false",
+      "color": "BLACK",
+      "position": "",
+      "storage": "0",
+      "varName": "",
+      "name": "Create Role"
+    },
+    {
+      "info": "1",
+      "find": "Muted",
+      "storage": "1",
+      "varName": "find.muted.role.to.set.perms",
+      "name": "Find Role"
+    },
+    {
+      "role": "3",
+      "varName": "find.muted.role.to.set.perms",
+      "permission": "14",
+      "state": "1",
+      "reason": "",
+      "name": "Set Role Permissions"
+    },
+    {
+      "storage": "1",
+      "varName": "creating.muted.role.message",
+      "message": "Muted role has been successfully created!",
+      "storage2": "1",
+      "varName2": "",
+      "name": "Edit Message"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "info": "2",
+      "storage": "1",
+      "varName2": "command.author.username",
+      "name": "Store Member Info"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "info": "16",
+      "storage": "1",
+      "varName2": "command.author.avatar.url",
+      "name": "Store Member Info"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "permission": "MUTE_MEMBERS",
+      "iftrue": "2",
+      "iftrueVal": "17",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Member Permissions"
+    },
+    {
+      "title": "Invalid Permissions",
+      "author": "${tempVars(\"command.author.username\")}",
+      "color": "RED",
+      "timestamp": "false",
+      "url": "",
+      "authorIcon": "${tempVars(\"command.author.avatar.url\")}",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "storage": "1",
+      "varName": "invalid.permissions.embed",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "invalid.permissions.embed",
+      "message": "Invalid Permissions.\nIn order to mute people, you require the Mute Members permission.",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "invalid.permissions.embed",
+      "message": "DBM Mute System by Tristen#3979",
+      "footerIcon": "https://cdn.discordapp.com/attachments/562429832076722187/566791581600972820/tristen_profile_picture.jpg",
+      "name": "Set Embed Footer"
+    },
+    {
+      "storage": "1",
+      "varName": "invalid.permissions.embed",
+      "channel": "0",
+      "varName2": "",
+      "storage3": "0",
+      "varName3": "",
+      "name": "Send Embed Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "condition": "1",
+      "comparison": "0",
+      "value": "1",
+      "iftrue": "2",
+      "iftrueVal": "23",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Parameters"
+    },
+    {
+      "title": "Invalid Mention",
+      "author": "${tempVars(\"command.author.username\")}",
+      "color": "RED",
+      "timestamp": "false",
+      "url": "",
+      "authorIcon": "${tempVars(\"command.author.avatar.url\")}",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "storage": "1",
+      "varName": "invalid.mention.embed",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "invalid.mention.embed",
+      "message": "Invalid User Mention.\nPlease mention a user to mute.\n[p]mute {@member} {reason}",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "invalid.mention.embed",
+      "message": "DBM Mute System by Tristen#3979",
+      "footerIcon": "https://cdn.discordapp.com/attachments/562429832076722187/566791581600972820/tristen_profile_picture.jpg",
+      "name": "Set Embed Footer"
+    },
+    {
+      "storage": "1",
+      "varName": "invalid.mention.embed",
+      "channel": "0",
+      "varName2": "",
+      "storage3": "0",
+      "varName3": "",
+      "name": "Send Embed Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "info": "1",
+      "infoIndex": "2",
+      "storage": "1",
+      "varName": "reasoning",
+      "name": "Store Command Params"
+    },
+    {
+      "storage": "1",
+      "varName": "reasoning",
+      "comparison": "0",
+      "value": "",
+      "iftrue": "2",
+      "iftrueVal": "30",
+      "iffalse": "0",
+      "iffalseVal": "",
+      "name": "Check Variable"
+    },
+    {
+      "title": "Invalid Reasoning",
+      "author": "${tempVars(\"command.author.username\")}",
+      "color": "RED",
+      "timestamp": "false",
+      "url": "",
+      "authorIcon": "${tempVars(\"command.author.avatar.url\")}",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "storage": "1",
+      "varName": "invalid.reasoning.embed",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "invalid.reasoning.embed",
+      "message": "Invalid Reasoning.\nPlease add a reason for why the user is being muted.",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "invalid.reasoning.embed",
+      "message": "DBM Mute System by Tristen#3979",
+      "footerIcon": "https://cdn.discordapp.com/attachments/562429832076722187/566791581600972820/tristen_profile_picture.jpg",
+      "name": "Set Embed Footer"
+    },
+    {
+      "storage": "1",
+      "varName": "invalid.reasoning.embed",
+      "channel": "0",
+      "varName2": "",
+      "storage3": "0",
+      "varName3": "",
+      "name": "Send Embed Message"
+    },
+    {
+      "name": "End Action Sequence"
+    },
+    {
+      "member": "0",
+      "varName": "",
+      "info": "2",
+      "storage": "1",
+      "varName2": "mentioned.user.username",
+      "name": "Store Member Info"
+    },
+    {
+      "member": "1",
+      "varName": "",
+      "info": "22",
+      "storage": "1",
+      "varName2": "command.author.user.and.tag",
+      "name": "Store Member Info"
+    },
+    {
+      "server": "0",
+      "varName": "",
+      "info": "2",
+      "storage": "1",
+      "varName2": "server.name",
+      "name": "Store Server Info"
+    },
+    {
+      "info": "1",
+      "find": "Muted",
+      "storage": "1",
+      "varName": "muted.role.find.to.mute",
+      "name": "Find Role"
+    },
+    {
+      "member": "0",
+      "varName2": "",
+      "role": "3",
+      "varName": "muted.role.find.to.mute",
+      "name": "Add Member Role"
+    },
+    {
+      "member": "0",
+      "varName": "",
+      "mute": "0",
+      "name": "Set Member Mute"
+    },
+    {
+      "title": "User Muted Successfully",
+      "author": "${tempVars(\"command.author.username\")}",
+      "color": "GREEN",
+      "timestamp": "false",
+      "url": "",
+      "authorIcon": "${tempVars(\"command.author.avatar.url\")}",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "storage": "1",
+      "varName": "muted.user.successfully.embed",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "muted.user.successfully.embed",
+      "message": "${tempVars(\"mentioned.user.username\")} has been muted successfully!",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "muted.user.successfully.embed",
+      "message": "DBM Mute System by Tristen#3979",
+      "footerIcon": "https://cdn.discordapp.com/attachments/562429832076722187/566791581600972820/tristen_profile_picture.jpg",
+      "name": "Set Embed Footer"
+    },
+    {
+      "storage": "1",
+      "varName": "muted.user.successfully.embed",
+      "channel": "0",
+      "varName2": "",
+      "storage3": "0",
+      "varName3": "",
+      "name": "Send Embed Message"
+    },
+    {
+      "title": "You've been muted",
+      "author": "${tempVars(\"command.author.username\")}",
+      "color": "BLUE",
+      "timestamp": "true",
+      "url": "",
+      "authorIcon": "${tempVars(\"command.author.avatar.url\")}",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "storage": "1",
+      "varName": "user.dm.muted.embed",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "user.dm.muted.embed",
+      "message": "**${tempVars(\"mentioned.user.username\")}**, you've been muted from **${tempVars(\"server.name\")}**\n**Muted by:** ${tempVars(\"command.author.user.and.tag\")}\n**Reason:** \"${tempVars(\"reasoning\")}\"",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "user.dm.muted.embed",
+      "channel": "2",
+      "varName2": "",
+      "storage3": "0",
+      "varName3": "",
+      "name": "Send Embed Message"
+    },
+    {
+      "comment": "SENDS TO #LOGS CHANNEL, IF FOUND.",
+      "color": "#ff0000",
+      "name": "Comment"
+    },
+    {
+      "info": "1",
+      "find": "logs",
+      "storage": "1",
+      "varName": "found.channel.logs",
+      "name": "Find Channel"
+    },
+    {
+      "member": "0",
+      "varName": "",
+      "info": "22",
+      "storage": "1",
+      "varName2": "mentioned.user.user.and.tag",
+      "name": "Store Member Info"
+    },
+    {
+      "title": "Muted User Log",
+      "author": "${tempVars(\"command.author.username\")}",
+      "color": "BLUE",
+      "timestamp": "true",
+      "url": "",
+      "authorIcon": "${tempVars(\"command.author.avatar.url\")}",
+      "imageUrl": "",
+      "thumbUrl": "",
+      "storage": "1",
+      "varName": "muted.user.log.embed",
+      "name": "Create Embed Message"
+    },
+    {
+      "storage": "1",
+      "varName": "muted.user.log.embed",
+      "message": "**${tempVars(\"mentioned.user.user.and.tag\")}** has been muted.\n\n**Muted by:** ${tempVars(\"command.author.user.and.tag\")}\n\n**Reason:** \"${tempVars(\"reasoning\")}\"",
+      "name": "Set Embed Description"
+    },
+    {
+      "storage": "1",
+      "varName": "muted.user.log.embed",
+      "channel": "5",
+      "varName2": "found.channel.logs",
+      "storage3": "0",
+      "varName3": "",
+      "name": "Send Embed Message"
+    }
+  ]
+}
