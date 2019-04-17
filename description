@@ -1,0 +1,16 @@
+!post moderating ***DBM Muting System***
+Muting system with 3 errors, DMs user that he's muted, sends a message to the"logs" channel if there is one, and includes timestamps, who authorized the command, and more.
+This muting system uses roles in order to fully mute the member and mutes them from voice chat as well.
+
+The system on first use creates a "Muted" role and sets the permissions to not be able to Send Messages, but they can still Read Messages!
+
+**Error Messages:**
+1. Invalid Permissions (says requires Mute Members permission).
+2. Invalid Mention (says to mention a user to mute/unmute them).
+3. Invalid Reasoning (says to add a reason of why you're banning them).
+
+**Steps the System takes to execute the Mute:**
+1. Checks for the errors listen above.
+2. Adds the "Muted" role to the user.
+3. Sends an embedded Muted Successfully message.
+4. DMs the Muted user what server he has been muted from, who muted him, and the reasoning for the mute.
